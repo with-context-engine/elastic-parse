@@ -1,0 +1,54 @@
+[project]
+name = "elastic-parse"
+version = "0.1.0"
+description = "A tool for parsing elastic-sitemap.xml files and creating vector embeddings on Supabase for use with AI agents, leveraging the Crawl4AI repository."
+readme = "README.md"
+authors = [
+    { name="Ajay Bhargava", email="bhargava.ajay@gmail.com" },
+]
+requires-python = ">=3.12"
+dependencies = [
+    "crawl4ai>=0.5.0.post8",
+    "elementpath>=4.8.0",
+    "pytest>=8.3.5",
+    "typer>=0.15.2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.2",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["__tests__"]
+python_files = ["test_*.py", "*_test.py"]
+pythonpath = [".", "src"]
+
+[tool.ruff]
+# Enable pycodestyle (E), pyflakes (F), and isort (I) rules
+select = ["E", "F", "I"]
+ignore = []
+
+# Allow lines to be as long as 100 characters
+line-length = 100
+
+# Assume Python 3.12
+target-version = "py312"
+
+# Files to include/exclude
+include = ["*.py", "*.pyi", "**/pyproject.toml"]
+exclude = [
+    ".git",
+    ".ruff_cache",
+    "__tests__",
+    "build",
+    "dist"
+]
+
+# Sort imports
+[tool.ruff.isort]
+known-first-party = ["elastic_parse"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
