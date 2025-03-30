@@ -5,6 +5,11 @@ build/
 dist/
 wheels/
 *.egg-info
+__init__.py
 
 # Virtual environments
 .venv
+
+# Hide gitignored files from VS Code
+.vscode/*
+!.vscode/settings.json
