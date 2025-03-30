@@ -13,3 +13,7 @@ __init__.py
 # Hide gitignored files from VS Code
 .vscode/*
 !.vscode/settings.json
+
+# Ignore all files in the output directory
+output/*
+
